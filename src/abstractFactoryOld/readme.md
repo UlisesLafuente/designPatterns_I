@@ -4,15 +4,12 @@ Exercise:
 
 Objective
 
-Create a contact manager capable of automatically formatting addresses and phone numbers according to the country of
-origin using the Abstract Factory pattern.
+Create a contact manager capable of automatically formatting addresses and phone numbers according to the country of origin using the Abstract Factory pattern.
 
-Each specific factory will be responsible for offering the specific format of each country, ensuring that the customer
-can obtain the correct representation of contact without depending on the specific classes.
+Each specific factory will be responsible for offering the specific format of each country, ensuring that the customer can obtain the correct representation of contact without depending on the specific classes.
 Description
 
-Imagine that you are developing an international application that needs to manage contact data of users from different
-countries. Each country has:
+Imagine that you are developing an international application that needs to manage contact data of users from different countries. Each country has:
 
     A specific address format (e.g., the order of the fields, separators, etc.).
     A specific phone format, with a specific prefix and a specific pattern.
@@ -34,6 +31,20 @@ Requirements
     Create a class ContactAct as a customer.
         Receive an instance of a specific factory.
         Allow you to create addresses and telephone numbers without knowing the specific classes.
+    The result of the contact data generated must be demonstrated by unit tests.
+
+Requisits
+
+    Defineix els productes abstractes: Address, Phone
+    Crea la fàbrica abstracta: ContactFactory
+    Implementa almenys dues fàbriques concretes: SpainContactFactory i USAContactFactory
+    Implementa les classes concretes de productes. Cada classe haurà d’implementar el format específic per al seu país:
+        Ex. Spain: Carrer Example, 08001 Barcelona | USA: Example Street, New York, NY 10001
+        Prefix telèfon Spain: +34 | Prefix telèfon USA: +1
+    Crea una classe Contact que actuï com client.
+        Rebi una instància d’una fàbrica concreta.
+        Permeti crear adreces i telèfons sense conèixer les classes concretes.
+    El resultat de les dades de contacte generades ha de ser demostrat mitjançant tests unitaris.
 
 Example of expected use
 
